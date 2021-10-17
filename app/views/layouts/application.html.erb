@@ -4,12 +4,56 @@
     <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <!--メインロゴ-->
+          <%= link_to "Bookers",root_path ,class:"navbar-brand p-3 text-light"%>
+          
+          <!--メニューボタン-->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Dropdown" aria-controls="Dropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <!--ボタンの中-->
+          <div class="collapse navbar-collapse" id="Dropdown">
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Sing up</li>
+              <li>Log in</li>
+              <li>Home</li>
+              <li>Books</li>
+              <li>Users</li>
+              <li>Log out</li>
+            </ul>
+          
+          
+          </div>
+          
+        </div>
+      </nav>
+    </header>
+    
+    
+    
+    <div class="container">
+      <div class="row">
+        <%= yield %>
+      <div>
+    <div>
+      
+    <footer class="text-center">
+      <p>CopyRight Infratop.inc</p>
+    </footer>
+    
   </body>
 </html>
