@@ -1,0 +1,21 @@
+<h2>User info</h2>
+
+
+<%= attachment_image_tag user ,:profile_image,:fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:"50x50" %>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <th>name<th>
+      <th><%= user.name %></th>
+    <tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
+
+<%if current_user == user %>
+  <%= link_to "" ,edit_user_path(user) ,class:"btn btn-outline-secondary btn-block btn-md fas fa-user-edit" %>
+<%end%>

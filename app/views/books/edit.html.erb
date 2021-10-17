@@ -1,0 +1,23 @@
+<div class="row mx-auto">
+  <div class="col-md-7 mx-auto">
+  <h2>Editing Book</h2>
+  
+  <%= form_with model: @book , local: true do |f| %>
+    <div class="mb-3">
+      <%= f.label :title %>
+      <%= f.text_field :title,class:"form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :opinion %>
+      <%= f.text_area:body,class:"form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.submit "Update Book",class:"btn btn-success btn-md" %>
+    </div>
+  <%end%>
+  
+  <%= link_to "show",book_path(@book) %><span>|</span>
+  <%= link_to "back",books_path %>
+  
+  </div>
+</div>

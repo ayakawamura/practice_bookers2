@@ -1,2 +1,36 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class=row>
+  <div class="col-md-4">
+    
+    <!--userプロフィール-->
+    <%= render "users/profile", user:@user %>
+    
+    <!--newbook-->
+    <%= render "books/new", book:@book %>
+  </div>
+  
+  <div class="col-md-7 ml-auto">
+    <h2>Users</h2>
+    
+    <table class="table table-white">
+      <thead>
+        <tr>
+          <th>image</th>
+          <th>name</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= attachment_image_tag user, :profile_image,:fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg",size:"50x50"%><br/>
+          </td>
+          <td><%= user.name %></td>
+          <td><%= link_to "Show",user_path(user.id) %></td>
+        </tr>
+        <%end%>
+      </tbody>
+
+    </table>
+
+  </div>
